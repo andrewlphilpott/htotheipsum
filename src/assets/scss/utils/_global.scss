@@ -1,0 +1,63 @@
+/*-------------------------------------------
+  General
+-------------------------------------------*/
+body {
+  @extend %body; // default body text styles
+  color: $gray;
+}
+
+// Wrapper
+.rap {
+  margin: 0 auto;
+  max-width: rem(640);
+  padding: 0 20px;
+}
+
+/*-------------------------------------------
+  Flexbox
+-------------------------------------------*/
+%flexbox {
+	display: flex;
+}
+%justify {
+	justify-content: space-between;
+}
+%align-center {
+	align-self: center;
+}
+
+/*-------------------------------------------
+  Positioning
+-------------------------------------------*/
+%center-vert {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/*-------------------------------------------
+  Lists
+-------------------------------------------*/
+%list-reset {
+  list-style: none;
+  margin: 0;
+}
+%inline-list {
+  @extend %list-reset;
+
+  > li {
+    display: inline-block;
+  }
+}
+
+/*-------------------------------------------
+  Animations
+-------------------------------------------*/
+%transition-ease {
+  transition: all .125s ease;
+}
+%transition-linear {
+  transition: all .125s linear;
+}
+%transition-inout {
+  transition: all .25s cubic-bezier(.68, -.55, .265, 1.55);
+}

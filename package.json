@@ -1,0 +1,22 @@
+{
+  "name": "h-to-the-ipsum",
+  "version": "1.0.0",
+  "description": "Hova ipsum generator",
+  "author": "Andrew Philpott",
+  "devDependencies": {
+  	"gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "browser-sync": "^2.9.0",
+  	"gulp-copy": "latest",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^4.0.0",
+    "gulp-imagemin": "latest",
+    "gulp-notify": "latest",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.2.0",
+    "gulp-twig": "latest",
+    "gulp-uglify": "^1.5.3",
+    "gulp-watch": "latest",
+    "jshint": "^2.9.1"
+  }
+}

@@ -1,0 +1,18 @@
+/*-------------------------------------------
+  Button
+-------------------------------------------*/
+%btn-reset {
+  border: none;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+.btn, button {
+  @extend %btn-reset;
+  background: $accent;
+  border-radius: $round-sm;
+  color: $white;
+  @extend %h4; // font-size: rem(16)
+  font-weight: 700;
+  padding: 5px 10px;
+}

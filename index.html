@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class=""> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8" />
+		<title>H to the Ipsum</title>
+
+		<!-- Main Styles -->
+		<link rel="stylesheet" type="text/css" href="/assets/css/screen.css" media="screen" />
+
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css" />
+
+		<link href="/assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body id="" data-page="home" ng-app="HtotheIpsum" ng-controller="ipsumController" ng-init="init()">
+
+		
+		<div class="rap">
+			<h1>H to the Ipsum</h1>
+
+<p class="intro">Want to be a big pimp mac daddy? Use this handy filler text generator to impress all your colleagues and clients.</p>
+
+<form class="ipsum" method="POST" ng-submit="getIpsum()">
+  <fieldset class="ipsum_options">
+    <ul class="fields">
+      <li>
+        <label class="ipsum_lbl" for="opt-length">Amount</label>
+
+        <div class="ipsum_amount">
+          <input type="range" min="1" max="5" name="length" ng-model="length" id="opt-length" value="1" ng-value="1" ng-change="getIpsum()" />
+          <output name="length_output" for="length">{{ length }}</output>
+
+          <div class="pills">
+            <input type="radio" name="unit" ng-model="unit" id="opt-unit-1" value="paragraph" ng-change="getIpsum()" /><!--
+         --><label class="pill" for="opt-unit-1">Paragraph(s)</label><!--
+         --><input type="radio" name="unit" ng-model="unit" id="opt-unit-3" value="word" ng-change="getIpsum()" /><!--
+         --><label class="pill" for="opt-unit-3">Word(s)</label>
+          </div><!-- /.pills -->
+        </div><!-- /.ipsum_amount -->
+      </li>
+      <li>
+        <span class="ipsum_lbl">Censoring</span>
+        <input type="checkbox" name="clean" ng-model="clean" id="opt-clean" value="1" ng-change="censorIpsum()" />
+        <label class="switch" for="opt-clean">Censor Curse Words</label>
+      </li>
+      <li>
+        <span class="ipsum_lbl">Capitalization</span>
+
+        <div class="pills">
+          <input type="radio" name="caps" ng-model="caps" id="opt-format-1" value="sentence" /><!--
+       --><label class="pill" for="opt-format-1">Normal</label><!--
+       --><input type="radio" name="caps" ng-model="caps" id="opt-format-2" value="uppercase" /><!--
+       --><label class="pill" for="opt-format-2">Uppercase</label><!--
+       --><input type="radio" name="caps" ng-model="caps" id="opt-format-3" value="lowercase" /><!--
+       --><label class="pill" for="opt-format-3">Lowercase</label><!--
+       --><input type="radio" name="caps" ng-model="caps" id="opt-format-4" value="titlecase" /><!--
+       --><label class="pill" for="opt-format-4">Title Case</label>
+        </div>
+      </li>
+    </ul>
+  </fieldset>
+</form>
+
+<section class="result">
+  <h2>Result</h2>
+
+  <p class="{{ caps }}" ng-if="unit == 'paragraph'" ng-repeat="paragraph in text">{{ paragraph }}</p>
+
+  <p class="{{ caps }}" ng-if="unit != 'paragraph'"><span ng-repeat="ipsum in text">{{ ipsum }} </span></p>
+
+  <textarea class="result_copy {{ caps }}">{{ plainText }}</textarea>
+
+  <button class="result_btn" ng-click="copyIpsum()">Copy Text</button>
+</section><!-- /.result -->
+		</div><!-- .rap -->
+
+		<script type="text/javascript" src="/assets/js/lib/angular.min.js"></script>
+<script type="text/javascript" src="/assets/js/main.min.js"></script>
+
+	</body>
+</html>
