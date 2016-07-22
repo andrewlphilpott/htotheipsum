@@ -141,6 +141,10 @@ output {
   text-align: center;
   padding: 5px 15px;
 
+  &:hover {
+    background: transparentize($white, .8);
+  }
+
   &:first-of-type {
     border-radius: $round-sm 0 0 $round-sm;
   }

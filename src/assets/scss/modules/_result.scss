@@ -1,6 +1,21 @@
 /*-------------------------------------------
   Result Styles
 -------------------------------------------*/
+.result_refresh {
+  display: inline-block;
+  @extend %h4; // font-size: rem(16)
+  margin-left: 5px;
+  transform: translateY(-2px);
+
+  &:before {
+    content: '(';
+    margin-right: 3px;
+  }
+  &:after {
+    content: ')';
+    margin-left: 3px;
+  }
+}
 .result_content {
   background: $white;
   color: $gray-dk;

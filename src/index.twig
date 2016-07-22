@@ -39,12 +39,12 @@
           <div class="pills">
             <input type="radio" name="caps" ng-model="caps" id="opt-format-1" value="sentence" /><!--
          --><label class="pill" for="opt-format-1">Normal</label><!--
-         --><input type="radio" name="caps" ng-model="caps" id="opt-format-2" value="uppercase" /><!--
-         --><label class="pill" for="opt-format-2">Uppercase</label><!--
+         --><input type="radio" name="caps" ng-model="caps" id="opt-format-2" value="titlecase" /><!--
+         --><label class="pill" for="opt-format-2">Title Case</label><!--
          --><input type="radio" name="caps" ng-model="caps" id="opt-format-3" value="lowercase" /><!--
          --><label class="pill" for="opt-format-3">Lowercase</label><!--
-         --><input type="radio" name="caps" ng-model="caps" id="opt-format-4" value="titlecase" /><!--
-         --><label class="pill" for="opt-format-4">Title Case</label>
+         --><input type="radio" name="caps" ng-model="caps" id="opt-format-4" value="uppercase" /><!--
+         --><label class="pill" for="opt-format-4">Uppercase</label>
           </div>
         </li>
       </ul>
@@ -52,7 +52,7 @@
   </form>
 
   <section class="result">
-    <h2>Result</h2>
+    <h2>Result <span class="result_refresh"><button class="btn-link" ng-click="getIpsum()">Refresh</button></span></h2>
 
     <button class="result_btn" ng-click="copyIpsum($event)">Copy Text</button>
 
