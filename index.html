@@ -70,6 +70,8 @@
   <section class="result">
     <h2>Result</h2>
 
+    <button class="result_btn" ng-click="copyIpsum($event)">Copy Text</button>
+
     <div class="result_content">
       <p class="{{ caps }}" ng-if="unit == 'paragraph'" ng-repeat="paragraph in text">{{ paragraph }}</p>
 
@@ -77,8 +79,6 @@
     </div>
 
     <textarea class="result_copy {{ caps }}">{{ plainText }}</textarea>
-
-    <button class="result_btn" ng-click="copyIpsum($event)">Copy Text</button>
   </section><!-- /.result -->
 </div><!-- /.content -->
 		</div><!-- .rap -->
