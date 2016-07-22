@@ -57,9 +57,9 @@
     <button class="result_btn" ng-click="copyIpsum($event)">Copy Text</button>
 
     <div class="result_content">
-      <p class="{{ '{{ caps }}' }}" ng-if="unit == 'paragraph'" ng-repeat="paragraph in text">{{ '{{ paragraph }}' }}</p>
+      <p class="{{ '{{ caps }}' }}" ng-if="unit == 'paragraph'" ng-repeat="paragraph in text track by $index">{{ '{{ paragraph }}' }}</p>
 
-      <p class="{{ '{{ caps }}' }}" ng-if="unit != 'paragraph'"><span ng-repeat="ipsum in text">{{ '{{ ipsum }}' }} </span></p>
+      <p class="{{ '{{ caps }}' }}" ng-if="unit != 'paragraph'"><span ng-repeat="ipsum in text track by $index">{{ '{{ ipsum }}' }} </span></p>
     </div>
 
     <textarea class="result_copy {{ '{{ caps }}' }}">{{ '{{ plainText }}' }}</textarea>
