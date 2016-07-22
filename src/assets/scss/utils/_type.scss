@@ -31,7 +31,7 @@
 %h6 {font-size: rem(12)}
 
 @include min-up($tablet) {
-	%h0 {font-size: rem(100)}
+	%h0 {font-size: rem(72)}
 	%h1 {font-size: rem(38)}
 	%h2 {font-size: rem(28)}
 	%h3 {font-size: rem(21)}
@@ -70,11 +70,40 @@ p, ol, ul, pre, table {
 
 // Font Styling
 h1, h2, h3, h4, h5, h6 {
-	font-weight: 700;
+	color: $gray-md;
+	font-weight: 300;
 	margin-bottom: .25em;
 }
 .intro {
 	@extend %h3;
+	line-height: 1.5;
+}
+.page-title {
+	color: $gray-lt;
+	@extend %h0; // font-size: rem(60)
+	font-weight: 200;
+	position: relative;
+	text-align: center;
+	text-shadow: 0 1px 0 darken($gray-md, 10%),
+						   0 2px 0 darken($gray-md, 12%),
+							 0 3px 0 darken($gray-md, 14%);
+
+	&:after {
+		color: $white;
+		content: attr(data-text);
+	}
+
+	span {
+		height: 100%;
+		mask-image: linear-gradient(0deg,
+																transparentize($white, 0),
+																transparentize($white, 1) 70%,
+																transparentize($white, 1));
+		left: 0;
+		position: absolute;
+		width: rem(600);
+		z-index: 1;
+	}
 }
 
 // Inline Element Styles

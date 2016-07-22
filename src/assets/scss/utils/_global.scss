@@ -3,7 +3,8 @@
 -------------------------------------------*/
 body {
   @extend %body; // default body text styles
-  color: $gray;
+  color: $white;
+  background: $gray-dk;
 }
 
 // Wrapper
@@ -11,6 +12,7 @@ body {
   margin: 0 auto;
   max-width: rem(640);
   padding: 0 20px;
+  position: relative;
 }
 
 /*-------------------------------------------

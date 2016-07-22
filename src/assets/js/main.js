@@ -120,7 +120,7 @@ if(!copySupport) {
 }
 
 // Ipsum Controller
-app.controller('ipsumController', ['$scope', '$http', function($scope, $http) {
+app.controller('ipsumController', ['$scope', '$http', '$timeout', function($scope, $http, $timeout) {
   $scope.clean = false;
   $scope.length = 1;
   $scope.unit = 'paragraph';
@@ -137,8 +137,6 @@ app.controller('ipsumController', ['$scope', '$http', function($scope, $http) {
       var song = songArr[0];
       song = response[song];
 
-      censor($scope.clean, $scope.unit);
-
       // Get the amount of text requested
       var pArr = Object.keys(song);
       pArr = shuffle(pArr);
@@ -148,12 +146,18 @@ app.controller('ipsumController', ['$scope', '$http', function($scope, $http) {
           var p = pArr[i];
           lyrics.push(song[p]);
         }
+
+        censor($scope.clean, $scope.unit);
+
         $scope.text = lyrics;
       } else {
         var rand = Math.floor(Math.random() * maxCount);
         var p = pArr[rand];
         song[p] = song[p].replace(',', '').replace('.', '').replace('?', '').replace('!', '').replace('“', '').replace('”', '');
         lyrics = song[p].split(/\s+/).slice(rand, (rand + parseFloat($scope.length)));
+
+        censor($scope.clean, $scope.unit);
+
         $scope.text = lyrics;
       }
 
@@ -161,11 +165,16 @@ app.controller('ipsumController', ['$scope', '$http', function($scope, $http) {
     });
   };
 
-  $scope.copyIpsum = function() {
+  $scope.copyIpsum = function(e) {
     var copyText = document.querySelector('.result_copy');
     copyText.select();
     document.execCommand('copy');
     copyText.blur();
+    e.target.className += ' btn-success';
+    $timeout(function(){
+      e.target.innerHTML = 'Copy Text';
+      e.target.classList.toggle('btn-success');
+    }, 2000);
   }
 
   $scope.censorIpsum = function() {

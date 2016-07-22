@@ -13,6 +13,33 @@
   border-radius: $round-sm;
   color: $white;
   @extend %h4; // font-size: rem(16)
-  font-weight: 700;
-  padding: 5px 10px;
+  padding: 10px 20px;
+  @extend %transition-ease;
+
+  &:before {
+    background: $gray-dk;
+    border-radius: $round-lg;
+    color: $yellow;
+    content: '';
+    display: inline-block;
+    height: 20px;
+    margin: -4px 10px 0 -30px;
+    opacity: 0;
+    vertical-align: middle;
+    transform: scale(.75);
+    visibility: hidden;
+    width: 20px;
+    @extend %transition-ease;
+  }
+}
+.btn-success {
+  background: $yellow;
+  color: $gray-dk;
+
+  &:before {
+    content: '✔';
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+  }
 }

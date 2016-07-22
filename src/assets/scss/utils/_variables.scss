@@ -18,21 +18,25 @@ $round-lg: 50%;
 $black: #000;
 $white: #fff;
 $gray: #555;
+$gray-dk: darken($gray, 20%);
 $gray-md: lighten($gray, 20%);
 $gray-lt: lighten($gray, 40%);
 
 $green: #00dd00;
 $red: #dd0000;
 $blue: #55bbdd;
+$yellow: #ffda67;
+$purple: #8d67cc;
 
 // States
 $active: $green;
 $error: $red;
 
 // Accents
-$accent: $blue;
+$accent: $purple;
 
 /*-------------------------------------------
   Typefaces
 -------------------------------------------*/
-$sans-serif: "Open Sans", sans-serif;
+$sans-serif: "Helvetica Neue", sans-serif;
+$display: "Petit Formal Script", cursive;

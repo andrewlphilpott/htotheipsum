@@ -1,0 +1,17 @@
+/*-------------------------------------------
+  Result Styles
+-------------------------------------------*/
+.result_content {
+  background: $white;
+  color: $gray-dk;
+  padding: 20px;
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+}
+.result_btn {
+  display: block;
+  margin-top: 20px;
+  width: 100%;
+}
