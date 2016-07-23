@@ -19,8 +19,10 @@
 
 // Options
 .ipsum_amount {
-  @extend %flexbox;
-  width: 100%;
+  @include min-up($mobile-lg) {
+    display: flex;
+    width: 100%;
+  }
 }
 
 // Checkboxes and Radio Buttons
@@ -43,10 +45,7 @@ input[type="radio"] {
   display: inline-block;
   padding: 0;
   vertical-align: middle;
-
-  .ipsum_amount & {
-    width: calc(40%);
-  }
+  width: calc(100% - 3.5em);
 
   &::-webkit-slider-runnable-track {
     appearance: none;
@@ -63,6 +62,12 @@ input[type="radio"] {
     top: -8px;
     width: 15px;
     z-index: 1;
+  }
+
+  @include min-up($mobile-lg) {
+    .ipsum_amount & {
+      width: calc(40%);
+    }
   }
 }
 output {
@@ -131,15 +136,23 @@ output {
   width: 100%;
 
   .ipsum_amount & {
-    width: 50%;
+    margin-top: 10px;
+  }
+
+  @include min-up($mobile-lg) {
+    .ipsum_amount & {
+      margin-top: 0;
+      width: 50%;
+    }
   }
 }
 .pill {
   border: 1px solid $gray-md;
   flex: 1;
+  @extend %h6; // font-size: rem(12)
   margin-right: -1px;
   text-align: center;
-  padding: 5px 15px;
+  padding: 5px;
 
   &:hover {
     background: transparentize($white, .8);
@@ -157,6 +170,11 @@ output {
     border-color: $accent;
     color: $white;
     z-index: 1;
+  }
+
+  @include min-up($mobile-lg) {
+    font-size: rem(16);
+    padding: 5px 15px;
   }
 }
 

@@ -87,23 +87,6 @@ h1, h2, h3, h4, h5, h6 {
 	text-shadow: 0 1px 0 darken($gray-md, 10%),
 						   0 2px 0 darken($gray-md, 12%),
 							 0 3px 0 darken($gray-md, 14%);
-
-	&:after {
-		color: $white;
-		content: attr(data-text);
-	}
-
-	span {
-		height: 100%;
-		mask-image: linear-gradient(0deg,
-																transparentize($white, 0),
-																transparentize($white, 1) 70%,
-																transparentize($white, 1));
-		left: 0;
-		position: absolute;
-		width: rem(600);
-		z-index: 1;
-	}
 }
 
 // Inline Element Styles
