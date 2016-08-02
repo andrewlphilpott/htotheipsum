@@ -70,7 +70,7 @@ p, ol, ul, pre, table {
 
 // Font Styling
 h1, h2, h3, h4, h5, h6 {
-	color: $gray-md;
+	color: $gray-lt;
 	font-weight: 300;
 	margin-bottom: .25em;
 }
@@ -79,14 +79,11 @@ h1, h2, h3, h4, h5, h6 {
 	line-height: 1.5;
 }
 .page-title {
-	color: $gray-lt;
+	color: $accent;
 	@extend %h0; // font-size: rem(60)
 	font-weight: 200;
 	position: relative;
 	text-align: center;
-	text-shadow: 0 1px 0 darken($gray-md, 10%),
-						   0 2px 0 darken($gray-md, 12%),
-							 0 3px 0 darken($gray-md, 14%);
 }
 
 // Inline Element Styles

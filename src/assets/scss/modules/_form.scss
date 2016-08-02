@@ -49,13 +49,14 @@ input[type="radio"] {
 
   &::-webkit-slider-runnable-track {
     appearance: none;
-    background: $gray-md;
+    background: $gray-lt;
     height: 4px;
   }
   &::-webkit-slider-thumb {
     appearance: none;
     background: $white;
     border-radius: $round-sm;
+    border: 1px solid $gray-lt;
     cursor: pointer;
     height: 20px;
     position: relative;
@@ -95,8 +96,8 @@ output {
     @extend %transition-linear;
   }
   &:after {
-    background: transparent;
-    border: 1px solid $gray-md;
+    background: $gray-lt;
+    border: 1px solid $gray-lt;
     content: 'Off';
     font-size: 12px;
     left: 0;
@@ -117,9 +118,8 @@ output {
 
   input:checked + & {
     &:after {
-      background: $yellow;
-      border-color: $yellow;
-      color: $gray-dk;
+      background: $active;
+      border-color: $active;
       content: 'On';
       padding-left: 0;
       padding-right: 30px
@@ -147,12 +147,13 @@ output {
   }
 }
 .pill {
-  border: 1px solid $gray-md;
+  border: 1px solid $gray-lt;
   flex: 1;
   @extend %h6; // font-size: rem(12)
+  line-height: 1.2;
   margin-right: -1px;
   text-align: center;
-  padding: 5px;
+  padding: 7px 5px 6px;
 
   &:hover {
     background: transparentize($white, .8);
@@ -166,15 +167,20 @@ output {
   }
 
   input:checked + & {
-    background: $accent;
-    border-color: $accent;
+    background: linear-gradient(50deg, $accent, $accent-2);
+    border: none;
     color: $white;
+    padding: 8px 6px 7px;
     z-index: 1;
   }
 
   @include min-up($mobile-lg) {
     font-size: rem(16);
-    padding: 5px 15px;
+    padding: 7px 15px 6px;
+
+    input:checked + & {
+      padding: 8px 16px 7px;
+    }
   }
 }
 

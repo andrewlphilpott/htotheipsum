@@ -3,8 +3,25 @@
 -------------------------------------------*/
 body {
   @extend %body; // default body text styles
-  color: $white;
-  background: $gray-dk;
+  color: $gray-dk;
+  padding: 40px 20px;
+
+  &:before,
+  &:after {
+    bottom: 0;
+    content: '';
+    left: 0;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+  &:before {
+    background: linear-gradient(50deg, $gray-xlt, $white) no-repeat;
+  }
+  &:after {
+    border: 20px solid $white;
+  }
 }
 
 // Wrapper

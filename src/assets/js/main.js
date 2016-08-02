@@ -5,7 +5,6 @@ lyrics = [];
 // Set number of songs
 var songCount = 2;
 
-// Curse words
 var clean = {
   'asshole': 'a••hole',
   'beat off': 'b••• off',
@@ -127,6 +126,8 @@ app.controller('ipsumController', ['$scope', '$http', '$timeout', function($scop
   $scope.caps = 'sentence';
 
   var maxCount = 5;
+
+  $scope.clean = true;
 
   $scope.getIpsum = function(){
     lyrics = [];

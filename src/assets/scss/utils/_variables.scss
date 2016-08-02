@@ -21,6 +21,7 @@ $gray: #555;
 $gray-dk: darken($gray, 20%);
 $gray-md: lighten($gray, 20%);
 $gray-lt: lighten($gray, 40%);
+$gray-xlt: lighten($gray, 62.5%);
 
 $green: #00dd00;
 $red: #dd0000;
@@ -29,11 +30,12 @@ $yellow: #ffda67;
 $purple: #8d67cc;
 
 // States
-$active: $green;
+$active: $blue;
 $error: $red;
 
 // Accents
 $accent: $purple;
+$accent-2: $blue;
 
 /*-------------------------------------------
   Typefaces
