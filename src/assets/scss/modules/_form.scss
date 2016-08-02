@@ -96,8 +96,9 @@ output {
     @extend %transition-linear;
   }
   &:after {
-    background: $gray-lt;
+    background: transparent;
     border: 1px solid $gray-lt;
+    color: $gray-md;
     content: 'Off';
     font-size: 12px;
     left: 0;
@@ -106,9 +107,8 @@ output {
     width: 30px;
   }
   &:before {
-    background: $white;
+    background: $gray-lt;
     border-radius: 1px;
-    color: white;
     content: '';
     left: 1px;
     font-size: .5em;
@@ -118,13 +118,15 @@ output {
 
   input:checked + & {
     &:after {
-      background: $active;
+      background: linear-gradient(50deg, $accent, $accent-2);
       border-color: $active;
+      color: $white;
       content: 'On';
       padding-left: 0;
       padding-right: 30px
     }
     &:before {
+      background: $white;
       left: 31px;
     }
   }
@@ -148,6 +150,7 @@ output {
 }
 .pill {
   border: 1px solid $gray-lt;
+  color: $gray-md;
   flex: 1;
   @extend %h6; // font-size: rem(12)
   line-height: 1.2;
